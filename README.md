@@ -30,7 +30,7 @@ cd creditcard_fraud_dectection_backend
 ```
 2. Once you are in the directory, type this in your terminal
 ```
-pip install flask scikit-learn boto3 pandas numpy 
+pip install flask scikit-learn boto3 pandas numpy imblearn
 ```
 
 ## Running the application
