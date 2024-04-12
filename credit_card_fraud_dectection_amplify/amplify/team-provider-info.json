@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-creditcardfrauddecte-dev-039a8-authRole",
+      "UnauthRoleArn": "arn:aws:iam::339713131120:role/amplify-creditcardfrauddecte-dev-039a8-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::339713131120:role/amplify-creditcardfrauddecte-dev-039a8-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-creditcardfrauddecte-dev-039a8-deployment",
+      "UnauthRoleName": "amplify-creditcardfrauddecte-dev-039a8-unauthRole",
+      "StackName": "amplify-creditcardfrauddecte-dev-039a8",
+      "StackId": "arn:aws:cloudformation:us-east-2:339713131120:stack/amplify-creditcardfrauddecte-dev-039a8/0870e570-f915-11ee-ac4e-06595223db7b",
+      "AmplifyAppId": "d1zo6n21pj0tw6"
+    }
+  }
+}
