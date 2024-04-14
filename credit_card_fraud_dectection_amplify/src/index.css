@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+body{
+    font-family: "Rubik", sans-serif;
+}
+
+.error{
+    color: red;
+}
+
+.main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-size: cover;
+    background-position: right center; /* Position the gif on the right */
+    height: 100vh; /* Adjust the height as needed */
+}
+
+.heading {
+    margin-left: 10%; /* Adjust the margin as needed */
+}
+
+.heading p{
+    font-size: 25px;
+}
+
+h1{
+    font-size: 50px;
+    color: #FF5733; /* A vibrant color for the heading to draw attention */
+}
+
+nav ul li{
+    padding-right: 5em;
+    font-size: x-large;
+}
+
+nav a{
+    font-size: 45px;
+}
+
+nav ul, .techUsed ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.techUsed ul div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: center;
+padding-top: 2.5em;
+}
+
+nav div{
+    padding-left: 2em;
+    font-size: xx-large;
+    color: #FF5733; /* A vibrant color for the heading to draw attention */
+    font-weight: 600;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    padding-right: 15px;
+}
+
+img.logo{
+    width: 15em;
+    height: 10em;
+    padding-bottom: 2em;
+}
+
+.github-icon {
+    color: #333; /* GitHub logo color */
+}
+
+.linkedin-icon {
+    color: #0e76a8; /* LinkedIn logo color */
+}
+
+.email-icon {
+    color: #D44638; /* Gmail logo color */
+}
+
+nav ul li a:hover .github-icon,
+nav ul li a:hover .linkedin-icon,
+nav ul li a:hover .email-icon {
+    transform: scale(1.2); /* Increase the size of the icons on hover */
+}
+
+.howto {
+    font-family: 'Rubik', sans-serif; /* Consistent font for better readability */
+    color: #000; /* Dark grey text for contrast against white background */
+    background-color: #ffffff; /* White background to match your website */
+    border-radius: 8px; /* Rounded corners for a modern feel */
+    padding: 20px; /* Padding for spacing inside the container */
+    max-width: 1500px;  /* Max width to maintain optimal line length */
+    margin: 20px auto; /* Centering the container */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.howto h2 {
+    margin-bottom: 16px; /* Spacing below the heading */
+    color: #FF5733; /* A vibrant color for the heading to draw attention */
+    font-size: 45px;
+}
+
+.howto ol {
+    counter-reset: step-counter; /* Reset the counter */
+    padding-left: 0; /* Remove default padding */
+    list-style-type: none; /* Remove default list style */
+}
+
+.howto ol li {
+    counter-increment: step-counter; /* Increment the counter */
+    margin-bottom: 10px; /* Spacing between list items */
+    position: relative; /* Positioning for the step number */
+    padding-left: 30px; /* Space for the step number */
+}
+
+.howto ol li::before {
+    content: counter(step-counter); /* Display the counter */
+    position: absolute; /* Absolute positioning */
+    left: 0; /* Align to the left */
+    top: 0; /* Align to the top */
+    background-color: #FF5733; /* Background color for the step number */
+    color: white; /* Text color for the step number */
+    border-radius: 50%; /* Circular shape for the step number */
+    width: 20px; /* Width of the step number */
+    height: 20px; /* Height of the step number */
+    text-align: center; /* Center the text inside the step number */
+    line-height: 20px; /* Align the text vertically */
+    font-weight: bold; /* Bold text for the step number */
+}
+
+.howto .code {
+    background-color: #e0e0e0; /* Light grey background for code elements */
+    border-radius: 4px; /* Rounded corners for code elements */
+    padding: 2px 6px; /* Padding inside code elements */
+    font-family: 'Courier New', Courier, monospace; /* Monospace font for code */
+}
+
+.testit {
+    font-family: 'Rubik', sans-serif;
+    color: #000;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 1500px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3em;
+}
+
+.testit div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.testit div.copy{
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.testit div.copy button{
+    position: relative;
+    top: -0.7em;
+    left: -0.85em; 
+    margin-left: 2em;
+    padding: 0.5em;
+    width: 2.5em;
+}
+
+
+.testit h2, .model_details h2, .techUsed h2 {
+    margin-bottom: 16px;
+    color: #FF5733;
+    font-size: 45px;
+}
+
+.testit label {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.testit select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #000;
+    text-align: center;
+}
+
+.testit button.postman {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-top: 20px;
+}
+
+.testit button.postman:hover{
+    color: #000;
+    background-color: #FF5733; 
+}
+
+.testit button {
+    background-color: #FF5733;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.testit button:hover {
+    background-color: #000;
+}
+
+.postman img {
+    margin-right: 10px;
+}
+
+.info {
+    font-family: 'Rubik', sans-serif;
+    color: #000;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 10px 20px ;
+    max-width: 1500px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info label {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FF5733;
+    margin-bottom: 10px;
+}
+
+.info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.info ul li {
+    background-color: #f7f7f7;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.model_details {
+    font-family: 'Rubik', sans-serif;
+    color: #333;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 1500px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.model_details .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.model_details .info {
+    flex-basis: 50%;
+    padding: 0;
+    box-shadow: 2px 0 2px 0  rgba(0,0,0,0.1);
+}
+
+.model_details .info h3{
+    position: relative;
+    bottom: 4em;
+}
+
+.model_details .graph {
+    flex-basis: 50%;
+    text-align: center; /* Center align the graph title */
+    color: #000;
+}
+
+.model_details .graph h3 {
+    margin-bottom: 10px;
+}
+
+.model_details .graph img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Center the image */
+    border-radius: 5px;
+}
+
+.model_details p {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.techUsed {
+    font-family: 'Rubik', sans-serif;
+    color: #333;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 1500px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.techUsed ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 0;
+}
+
+.techUsed ul li a, a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.techUsed ul li a:hover, a:hover {
+    text-decoration: none;
+    color: #FF5733;
+}
+
+.techUsed ul li a:visited, a:visited {
+    text-decoration: none;
+    color: purple;
+}
