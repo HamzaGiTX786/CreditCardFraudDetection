@@ -396,7 +396,7 @@ footer {
         max-width: 350px;
     }
 
-    .testit h2, .model_details h2, .techUsed h2{
+    .testit h2, .model_details h2, .techUsed h2, .about h2{
         text-align: center;
     }
 
