@@ -4,7 +4,6 @@ import { atomOneDark } from 'react-syntax-highlighter/dist/esm/styles/hljs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCopy } from '@fortawesome/free-solid-svg-icons';
 
-import Navbar from './components/Navbar';
 import transactionsData from "../src/Dataset/fraudNewTest.json";
 import sagmemaker from "../src/assests/SageMaker.svg";
 import dyanmodb from "../src/assests/aws-dynamodb.svg";
@@ -14,6 +13,7 @@ import s3 from "../src/assests/amazon-s3-simple-storage-service.svg";
 import amplify from "../src/assests/Amplify.svg";
 import graph from "../src/ModelReport/Graph.png"
 import creditcard from "../src/assests/credit card.jpg"
+import systemarch from "../src/assests/systemarchitecture.svg";
 
 function App() {
   const [type, setType] = useState("");
@@ -72,7 +72,7 @@ function App() {
 
   return (
     <>
-    <Navbar />
+    <main>
     <header className='main'>
       <div className='heading'>
         <h1>Credit Card Transaction Fraud Detection</h1>
@@ -143,7 +143,7 @@ function App() {
 
       {showCode && 
         <div className='copy'>
-          <SyntaxHighlighter language="json" style={atomOneDark}>
+          <SyntaxHighlighter language="json" style={atomOneDark} wrapLines={true} wrapLongLines={true}>
             {data}
           </SyntaxHighlighter>
 
@@ -191,7 +191,7 @@ function App() {
 <div className='techUsed'>
   <h2>Technologies Used</h2>
   <ul>
-    <li><a href='https://aws.amazon.com/pm/dynamodb/' target='_blank' rel="noreferrer"><div><img src={dyanmodb} className='logo' alt='AWS Dynamodb logo'/> AWS Dynamodb</div></a></li>
+    <li><a href='https://aws.amazon.com/pm/dynamodb/' target='_blank' rel="noreferrer"><div><img src={dyanmodb} className='logo' alt='AWS Dynamodb logo'/> AWS DynamoDB</div></a></li>
     <li><a href='https://aws.amazon.com/pm/serv-s3/' target='_blank' rel="noreferrer"><div><img src={s3} className='logo' alt='AWS S3 logo'/> AWS S3</div></a></li>
     <li><a href='https://aws.amazon.com/pm/lambda/' target='_blank' rel="noreferrer"><div><img src={lambda} className='logo' alt='AWS Lambda logo'/> AWS Lambda</div></a></li>
     <li><a href='https://aws.amazon.com/api-gateway/' target='_blank' rel="noreferrer"><div><img src={apigateway} className='logo' alt='AWS API Gateway logo'/> AWS API Gateway</div></a></li>
@@ -201,6 +201,37 @@ function App() {
 
 </div>
 
+<div className='about'>
+  <h2>About the Project</h2>
+  <img src={systemarch} alt='System Architecture of project'/>
+  <p>
+    This project illustrates an overview of how a bank can employ a credit card fraud dectection system. Assuming that a bank employes AWS services to create their fraud detection system,
+    all credit card transaction are initially stored in a database. In my project, I used <a href='https://aws.amazon.com/pm/dynamodb/' target='_blank' rel="noreferrer">AWS's DynamoDB</a> to store some credit card transaction data. AWS's dynamodb is a servless NoSQL database that does not require any provising, patching
+    or management. This type of a database is useful for companies since they do not have employ a database management system to manage their data. AWS takes the responsiblity to do this and hence provides a guarantee of the data being available 99.99% of the time.   
+  </p>
+
+  <p>
+    To create a machine learning model, the model must be trained first to detect any anomilies. In order to do this, the credit card transaction data must be stored in a place where the machine leaning model can access it. It also requires this data to be formatted in a certain way such that it can be used and understood by the model. Hence for this purpose, I used a AWS's S3 bucket.
+    AWS S3 is a object storage service that offers industry leading scalibility of the data stored in it. Amazon also claims that it guarantees the availability and security of that data stored in it with along with providing increased performance with storing and reterving data from it.    
+    The data from AWS's DynamoDB is converted into a <span className='code'>.csv</span> before it is stored in a AWS S3 bucket. This data conversion process can be done using a service called AWS's Lambda.  
+  </p>
+
+  <p>
+    AWS Lambda is a serverless compute service that runs code based on events and managaes the compute resources by itself. It does not require anyone to manage its services by maintaning a server, and rather scales itself based on the events and the code it executes.
+    Using the event triggering service, AWS Lambda will automatically convert the data stored in AWS's DynamoDB into a <span className='code'>.csv</span> format and store it in a AWS S3 bucket.
+  </p>
+
+  <p>
+    Once the data is stored in AWS's S3 bucket in the format that can be used by the machine learning model, I then utilize AWS's sagemaker to create and train our machine learning model. AWS sagemaker is a fully managed service that provides a variety of tools to create high-performing, lost-cost machine learning models. AWS sagemaker allows you to create create machine learning models using various programming languages such as Python, JavaScript, R, etc. For the purpose of this project, I used Python to create the model.
+    AWS sagemaker is a provides a variety of libraries to create a machine learning model along with own sagemaker library. Some important python machine learning libraries such as sci-kit learn (<span className='code'>sklearn</span>), tensorflow, and pytorch are also available. I utlized the sci-kit learn as well as imbalanced-learn library (<span className='code'>imblearn</span>) for this project. I then created a xgboost classifer model that is trained to classify a transaction as real or fraudulent. 
+  </p>
+
+  <p>
+    After training and validating the model, AWS sagemaker also allows the model to be deployed on its platform. After deploying the model, sagemaker creates a endpoint that needs to be invoked when a test transaction needs to be classified. Since this was a event based system, I once again utilized AWS Lambda for this purpose. I created a AWS Lambda function that would invoked the AWS sagemaker endpoint when a test transaction is passed to it.
+    The xgboost machine learning classifier will classify the transaction as real or fraudulent based on what it has been trained on. This website, that is hosted on AWS Amplify, is part of that classification process as it provides a way for user to test out the model by selecting a known real or fraudlent transaction and evaluate the result of the model. 
+  </p>
+</div>
+</main>
       </>
   );
 }

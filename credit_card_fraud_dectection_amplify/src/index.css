@@ -1,7 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
-body{
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
     font-family: "Rubik", sans-serif;
+    scroll-behavior:smooth;
+}
+
+main{
+    flex-grow: 1;
 }
 
 .error{
@@ -15,6 +24,7 @@ body{
     background-size: cover;
     background-position: right center; /* Position the gif on the right */
     height: 100vh; /* Adjust the height as needed */
+    z-index: 1; 
 }
 
 .heading {
@@ -60,6 +70,7 @@ flex-direction: row;
 justify-content: space-between;
 align-items: center;
 padding-top: 2.5em;
+z-index: 10;
 }
 
 nav div{
@@ -101,7 +112,7 @@ nav ul li a:hover .email-icon {
     transform: scale(1.2); /* Increase the size of the icons on hover */
 }
 
-.howto {
+.howto, .testit, .techUsed, .model_details, .info, .about {
     font-family: 'Rubik', sans-serif; /* Consistent font for better readability */
     color: #000; /* Dark grey text for contrast against white background */
     background-color: #ffffff; /* White background to match your website */
@@ -114,12 +125,6 @@ nav ul li a:hover .email-icon {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.howto h2 {
-    margin-bottom: 16px; /* Spacing below the heading */
-    color: #FF5733; /* A vibrant color for the heading to draw attention */
-    font-size: 45px;
 }
 
 .howto ol {
@@ -158,18 +163,6 @@ nav ul li a:hover .email-icon {
 }
 
 .testit {
-    font-family: 'Rubik', sans-serif;
-    color: #000;
-    background-color: #ffffff;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 20px auto;
-    max-width: 1500px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     margin-top: 3em;
 }
 
@@ -196,7 +189,7 @@ nav ul li a:hover .email-icon {
 }
 
 
-.testit h2, .model_details h2, .techUsed h2 {
+.howto h2, .testit h2, .model_details h2, .techUsed h2, .about h2 {
     margin-bottom: 16px;
     color: #FF5733;
     font-size: 45px;
@@ -260,21 +253,6 @@ nav ul li a:hover .email-icon {
     margin-right: 10px;
 }
 
-.info {
-    font-family: 'Rubik', sans-serif;
-    color: #000;
-    background-color: #ffffff;
-    border-radius: 8px;
-    padding: 10px 20px ;
-    max-width: 1500px;
-    margin: 20px auto;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 .info label {
     font-size: 24px;
     font-weight: bold;
@@ -293,21 +271,6 @@ nav ul li a:hover .email-icon {
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.model_details {
-    font-family: 'Rubik', sans-serif;
-    color: #333;
-    background-color: #ffffff;
-    border-radius: 8px;
-    padding: 20px;
-    max-width: 1500px;
-    margin: 20px auto;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 .model_details .content {
@@ -352,27 +315,17 @@ nav ul li a:hover .email-icon {
     margin-top: 20px;
 }
 
-.techUsed {
-    font-family: 'Rubik', sans-serif;
-    color: #333;
-    background-color: #ffffff;
-    border-radius: 8px;
-    padding: 20px;
-    max-width: 1500px;
-    margin: 20px auto;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
 .techUsed ul {
     list-style-type: none;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     padding: 0;
+    flex-wrap: wrap;
+}
+
+.techUsed ul li{
+    padding: 2em;
 }
 
 .techUsed ul li a, a {
@@ -388,4 +341,94 @@ nav ul li a:hover .email-icon {
 .techUsed ul li a:visited, a:visited {
     text-decoration: none;
     color: purple;
+}
+
+.about{
+    margin-bottom: 2em;
+}
+
+.about img{
+    padding-top: 1em;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #FF5733;
+    color: #fff;
+    padding: 1em;
+}
+
+
+@media (max-width: 768px){
+
+    nav{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    nav div{
+        padding: 0;
+    }
+
+    nav ul li{
+        padding-right:2em;
+    }
+
+    .main{
+        padding-top: 4em;
+        flex-direction: column;
+    }
+
+    .main img{
+        max-width: 50em;
+        max-height: 30em;
+    }
+
+    .howto{
+        padding-top: 10em ;
+    }
+
+    .howto, .testit, .model_details{
+        max-width: 350px;
+    }
+
+    .testit h2, .model_details h2, .techUsed h2{
+        text-align: center;
+    }
+
+    .testit div.copy{
+        flex-direction: column;
+    }
+
+    .copy {
+        overflow-wrap: break-word; /* Breaks the line at the edge of the containing box */
+        word-wrap: break-word; /* An alias for 'overflow-wrap' for backwards compatibility */
+    }
+
+    .info{
+        flex-wrap: wrap;
+    }
+
+    .model_details .content{
+        flex-direction: column;
+    }
+
+    .model_details .info h3{
+        position: relative;
+        bottom: 0em;
+        text-align: center;
+    }
+
+    .techUsed ul{
+        flex-direction: column;
+    }
+
+    .about img{
+        max-width: 20em;
+        max-height: 50em;
+    }
 }
