@@ -12,7 +12,7 @@ import lambda from "../src/assests/aws-lambda-1.svg";
 import s3 from "../src/assests/amazon-s3-simple-storage-service.svg";
 import amplify from "../src/assests/Amplify.svg";
 import graph from "../src/ModelReport/Graph.png"
-import creditcard from "../src/assests/credit card.jpg"
+import creditcard from "../src/assests/credit card2.jpg"
 import systemarch from "../src/assests/systemarchitecture.svg";
 
 function App() {
@@ -78,7 +78,7 @@ function App() {
         <h1>Credit Card Transaction Fraud Detection</h1>
         <p>A system that uses a Machine Learning model to dectect if a credit card transaction is fraudulent or not</p>
         </div>
-      <img src={creditcard} alt="Credit Card" />
+      <img className="creditcard" src={creditcard} alt="Credit Card" />
       </header>
 
       <div className='howto'>
@@ -223,7 +223,7 @@ function App() {
 
   <p>
     Once the data is stored in AWS's S3 bucket in the format that can be used by the machine learning model, I then utilize AWS's sagemaker to create and train our machine learning model. AWS sagemaker is a fully managed service that provides a variety of tools to create high-performing, lost-cost machine learning models. AWS sagemaker allows you to create create machine learning models using various programming languages such as Python, JavaScript, R, etc. For the purpose of this project, I used Python to create the model.
-    AWS sagemaker is a provides a variety of libraries to create a machine learning model along with own sagemaker library. Some important python machine learning libraries such as sci-kit learn (<span className='code'>sklearn</span>), tensorflow, and pytorch are also available. I utlized the sci-kit learn as well as imbalanced-learn library (<span className='code'>imblearn</span>) for this project. I then created a xgboost classifer model that is trained to classify a transaction as real or fraudulent. 
+    AWS sagemaker also provides a variety of libraries to create a machine learning model along with its own sagemaker library. Some important python machine learning libraries such as sci-kit learn (<span className='code'>sklearn</span>), tensorflow, and pytorch are also available. I utlized the sci-kit learn as well as imbalanced-learn library (<span className='code'>imblearn</span>) for this project. I then created a xgboost classifer model that is trained to classify a transaction as real or fraudulent. 
   </p>
 
   <p>

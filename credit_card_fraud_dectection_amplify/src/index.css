@@ -84,8 +84,11 @@ a{
     text-decoration: none;
 }
 
-img{
-    padding-right: 15px;
+img.creditcard{
+    position: relative;
+    margin-right: 15em;
+    margin-left: 10em;
+    margin-top: 2em;
 }
 
 img.logo{
@@ -364,6 +367,12 @@ footer {
 
 @media (max-width: 768px){
 
+    img.creditcard{
+        margin: 0;
+        width: 100%;
+        height: auto;
+    }
+
     nav{
         flex-direction: column;
         justify-content: center;
@@ -430,5 +439,9 @@ footer {
     .about img{
         max-width: 20em;
         max-height: 50em;
+    }
+
+    footer{
+        font-size: 0.75em;
     }
 }
