@@ -12,9 +12,9 @@ git clone https://github.com/HamzaGiTX786/CreditCardFraudDetection.git
 ```
 
 ## Installing Dependencies
-1. From the root directory navigate into the `credit_card_fraud_dectection` directory and type this into your terminal
+1. From the root directory navigate into the `credit_card_fraud_dectection_amplify` directory and type this into your terminal
 ```
-cd credit_card_fraud_dectection
+cd credit_card_fraud_dectection_amplify
 ```
 2. Once you are in the directory, type this in your terminal
 ```
@@ -25,7 +25,7 @@ npm install
 ### For Frontend
 1. From the root directory navigate into the `credit_card_fraud_dectection` directory and type this into your terminal
 ```
-cd credit_card_fraud_dectection
+cd credit_card_fraud_dectection_amplify
 ```
 2. Once you are in the directory, type this in your terminal
 ```
